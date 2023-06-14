@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="content-type" content="text/html" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="description" content="Um novo conceito para doar e adotar cães e gatos" />
+   <meta name="keywords" content="adotar, doar, cachorros, gatos, cães, ong, animal, doméstico" />
+   <meta name="copyright" content="© Lar pro Bicho" />
+   <meta name="author" content="Beatriz Ferreira" />
+   <title>Edição do animal</title>
+   <link rel="stylesheet" href="hamburger.css" />
+   <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+   <div class="container">
+      <div class="header">
+         <!-- Logotipo superior -->
+         <a href="../danilo-pagina-inicial/index.html" class="logo">
+            <img src="imgs/logo.svg" alt="Logo Lar pro Bicho" />
+         </a>
+         <!-- Caixa branca do header -->
+         <div class="menu-desktop">
+            <div>
+               <h1>Um novo conceito para <b>doar e adotar</b> cães e gatos</h1>
+            </div>
+
+            <!--Caixa de pesquisa-->
+            <div class="menu-superior">
+               <div class="caixa-busca">
+                  <img src="imgs/icone_lupa.svg" alt="Lupa de busca" />
+                  <input type="text" name="busca" id="busca" placeholder="Busque por um termo específico" />
+               </div>
+
+               <a href="../sabrina-cadastro-de-animais/cadastro-de-animais.html" id="doe-bichinho">
+                  <img src="imgs/icone_adicionar.svg" alt="Icone adição" />
+                  <p>Doe um bichinho</p>
+               </a>
+
+               <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html">
+                  <img src="imgs/icone_mao-coracao.svg" alt="Icone mão com coração" />
+                  <p>Minhas doações</p>
+               </a>
+
+               <a href="../alicia-cadastro-de-usuario/cadastro-usuario.html" id="botao-cadastro">
+                  <img src="imgs/icone_lista-check.svg" alt="Prancheta com simbolo de check" />
+                  <p>Cadastre-se</p>
+               </a>
+
+               <a href="#">
+                  <img src="imgs/icone_chat.svg" alt="Icone de chat" />
+                  <p id="chat-desktop">Chat</p>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!-- grande botão laranja -->
+      <!-- <div class="botao-laranja">
+         <h1>Edite as informações do seu bichinho</h1>
+      </div> -->
+      <!-- Espaço da edição do animal -->
+      <div class="main">
+         <!-- Imagens do animal -->
+         <div class="foto-principal">
+            <img src="imgs/pipoca.jpg" alt="Pipoca" />
+         </div>
+         <!-- Fotos laterais -->
+         <div class="fotos-laterais">
+            <div class="foto-1">
+               <img src="imgs/pipoca.jpg" alt="Pipoca-1" />
+            </div>
+            <div class="foto-2">
+               <img src="imgs/pipoca.jpg" alt="Pipoca-2" />
+            </div>
+            <div class="foto-3">
+               <img src="imgs/pipoca.jpg" alt="Pipoca-3" />
+            </div>
+            <div class="foto-4">
+               <img src="imgs/pipoca.jpg" alt="Pipoca-4" />
+            </div>
+            <div class="foto-5">
+               <img src="imgs/pipoca.jpg" alt="Pipoca-5" />
+            </div>
+         </div>
+
+         <!-- Caracteristicas do animal -->
+         <div class="caracteristicas-animal">
+            <!-- Nome do animal -->
+            <h2>Pipoca</h2>
+            <div class="Tipo-animal">
+               <h3>Tipo do Animal</h3>
+               <img src="imgs/icone_cachorro.svg" alt="cachorro" height="50px" id="cao" />
+               <img src="imgs/icone_gato.svg" alt="gato" height="50px" id="gato" />
+            </div>
+            <div class="Sexo">
+               <h3>Sexo</h3>
+               <img src="imgs/icone_m.svg" alt="macho" height="50px" id="macho" />
+               <img src="imgs/icone_f.svg" alt="femea" height="50px" id="femea" />
+            </div>
+            <div class="Porte">
+               <h3>Porte</h3>
+               <img src="imgs/icone_p.svg" alt="pequeno" height="50px" id="pequeno" />
+               <img src="imgs/icone_m.svg" alt="medio" height="50px" id="medio" />
+               <img src="imgs/icone_g.svg" alt="grande" height="50px" id="grande" />
+            </div>
+            <div class="Cor">
+               <h3>Cor</h3>
+               <img src="imgs/icone_pret.svg" alt="preto" height="50px" id="preto" />
+               <img src="imgs/icone_branco.svg" alt="branco" height="50px" id="branco" />
+               <img src="imgs/icone_camarelo-claro.svg" alt="caramelo-claro" height="50px" id="camarelo-claro" />
+               <img src="imgs/icone_camarelo-escuro.svg" alt="caramelo-escuro" height="50px" id="camarelo-escuro" />
+               <img src="imgs/icone_preto-branco.svg" alt="preto-branco" height="50px" id="preto-branco" />
+               <img src="imgs/icone_branco-caramelo.svg" alt="branco-caramelo" height="50px" id="branco-caramelo" />
+            </div>
+            <div class="Idade-do-animal">
+               <h3>Idade do animal</h3>
+               <input type="text" name="Idade" id="Idade" placeholder=" Idade" />
+            </div>
+         </div>
+      </div>
+      <div class="footer">
+         <!-- botão de salvar-->
+         <div class="botao-salvar">
+            <a href="../theodoro-gerenciamento-de-conta/gerenciamento-de-conta.html" id="botao-salvar">
+               <h5>Salvar</h5>
+            </a>
+         </div>
+         <!-- Descriçao do animal-->
+         <div class="caixa-descricao">
+            <label for="texto-descrição"> Descriçao </label>
+            <br />
+            <textarea id="texto-descrição" rows="10" cols="40">
+            Super dócil, carinhoso e amigável, foi encontrado na Av. dos Estados.Aguardando um dono na ONG Amor Animal.
+            </textarea>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

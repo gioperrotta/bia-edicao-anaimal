@@ -1,0 +1,658 @@
+/* Declaração das fontes */
+@font-face {
+   font-family: dosis-book;
+   src: url("fonts/dosis-book.ttf") format("truetype");
+}
+@font-face {
+   font-family: dosis-bold;
+   src: url("fonts/dosis-bold.ttf") format("truetype");
+
+   /* Zerar margem, padding e configuração base do texto */
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   line-height: none;
+   font-family: dosis-book;
+   text-decoration: none;
+   color: #646464;
+}
+/* Divisão do Grid */
+/* Cabeçalho geral: H1, busca e menu de navegação Desktop */
+.container {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+header {
+   display: flex;
+   padding: 20px;
+}
+
+
+.main {
+   flex: 1;
+}
+
+footer {
+   background: yellow;
+   width: 100%;
+   height: 60px;
+}
+
+.logo {
+   width: 200px;
+   margin-right: 20px;
+}
+.logo > img {
+   width: 100%;
+}
+
+.menu-desktop {
+   display: flex;
+   flex-direction: column;
+}
+
+/* menu hamburguer inicio */
+.busca-menu{
+   display: flex;
+}
+
+.top-nav {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   color: #FFF;
+   height: 50px;
+   padding: 1em;
+ }
+ 
+ .menu {
+   display: flex;
+   flex-direction: row;
+   list-style-type: none;
+   flex-wrap: wrap;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .menu > li {
+   margin: 0 1rem;
+   overflow: hidden;
+ }
+
+ .menu-item img{
+   width: 40px;
+   height: 40px;
+ }
+ 
+ .menu-button-container {
+   display: none;
+   height: 100%;
+   width: 30px;
+   cursor: pointer;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ #menu-toggle {
+   display: none;
+ }
+ 
+ .menu-button,
+ .menu-button::before,
+ .menu-button::after {
+   display: block;
+   background-color: black;
+   position: absolute;
+   height: 4px;
+   width: 30px;
+   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+   border-radius: 2px;
+ }
+ 
+ .menu-button::before {
+   content: '';
+   margin-top: -8px;
+ }
+ 
+ .menu-button::after {
+   content: '';
+   margin-top: 8px;
+ }
+ 
+ #menu-toggle:checked + .menu-button-container .menu-button::before {
+   margin-top: 0px;
+   transform: rotate(405deg);
+ }
+ 
+ #menu-toggle:checked + .menu-button-container .menu-button {
+   background: rgba(255, 255, 255, 0);
+ }
+ 
+ #menu-toggle:checked + .menu-button-container .menu-button::after {
+   margin-top: 0px;
+   transform: rotate(-405deg);
+ }
+ 
+ @media (max-width: 1020px) {
+
+   .titulo h1 {
+      font-size: 18px;
+   }
+   .menu-button-container {
+     display: flex;
+   }
+   .menu {
+     position: absolute;
+     top: 0;
+     margin-top: 50px;
+     left: 0;
+     flex-direction: column;
+     width: 100%;
+     justify-content: center;
+     align-items: center;
+   }
+   #menu-toggle ~ .menu li {
+     height: 0;
+     margin: 0;
+     padding: 0;
+     border: 0;
+     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+   }
+   #menu-toggle:checked ~ .menu li {
+     border: 1px solid #333;
+     height: 2.5em;
+     padding: 0.5em;
+     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+   }
+   .menu > li {
+     display: flex;
+     justify-content: center;
+     margin: 0;
+     padding: 0.5em 0;
+     width: 100%;
+     color: white;
+     background-color: #222;
+   }
+   .menu > li:not(:last-child) {
+     border-bottom: 1px solid #444;
+   }
+ }
+/* menu hamburguer fim */
+
+.menu-desktop {
+   display: flex;
+   width: 100%;
+   height: 250px;
+   background-color: white;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 20px;
+   flex-flow: wrap;
+   justify-content: space-around;
+   align-items: center;
+   gap: 20px;
+   padding-top: 50px;
+}
+
+.menu-superior {
+   display: flex;
+   width: 100%;
+   flex-flow: wrap;
+   align-items: center;
+   justify-content: space-evenly;
+}
+/* Configuração da altura dos ícones no menu desktop */
+.menu-superior  a img {
+   width: 40px;
+   height: 40px;
+   margin-right: 10px;
+}
+
+.titulo {
+   display: flex;
+   flex-wrap: wrap;
+   font-family: dosis-bold;
+   font-size:18px ;  
+}
+.titulo strong {   
+   color: #ff9f32;
+}
+
+
+/* @media screen and (max-width: 780px) { 
+   .menu-superior p {
+      display: none;
+   }
+   .titulo {
+      display: none;
+      font-size: 14px ;  
+   }
+} */
+
+
+
+
+
+/* Caixa branca do cabeçalho */
+
+/* Título principal */
+
+
+/* Div contendo imagem da lupa + input de busca */
+.caixa-busca {
+   height: 50px;
+   display: flex;
+   align-items: center;
+}
+
+/* Configuração do tamanho da imagem da lupa */
+.caixa-busca > img {
+   display: flex;
+   height: 40px;
+}
+/* Estilização da caixa de busca */
+#busca {
+   border: 0 none;
+   padding-left: 15px;
+   margin-right: 20px;
+   border-radius: 20px;
+   width: 230px;
+   font-size: 16px;
+   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+/* Estilização da caixa de busca quando em foco */
+input:focus {
+   border: 0 none;
+   outline: 0;
+}
+
+/* Div contendo os 4 links de navegação */
+
+/* Estilização dos links de navegação */
+a {
+   text-decoration: none;
+   display: flex;
+   /* flex-flow: row wrap; */
+   align-items: center;
+}
+/* Adição de um espaço do texto do link para o próximo ícone de navegação */
+p {
+   font-size: 16px;
+}
+
+/* Estilização quando o mouse passa em cima dos links de navegação */
+.menu-superior > a:hover {
+   text-decoration: underline;
+}
+/* Tirar o espaço de margem do último link do menu através de ID único */
+#chat-desktop {
+   margin: 0px;
+}
+/* Configuração do botão laranja */
+.botao-laranja {
+   /*border: solid red;*/
+   height: 50px;
+   width: 100%;
+   display: flex;
+   background-color: #ff9f32;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 20px;
+   gap: 20px;
+   flex-flow: nowrap;
+   justify-content: center;
+}
+.botao-laranja > h1 {
+   width: 100%;
+   font-family: dosis-bold;
+   font-size: 25px;
+   color: white;
+   text-align: center;
+   align-items: center;
+   display: flex;
+   justify-content: center;
+}
+/* -- Configuração do bloco principal -- */
+.main {
+   /*border: solid rgb(234, 255, 0);*/
+   display: flex;
+   padding: 40px;
+   justify-content: center;
+}
+/* Configuração das fotos do animal */
+
+.foto-principal > img {
+   /*border: solid rgb(93, 178, 189);*/
+   width: fit-content;
+   width: 380px;
+   height: 380px;
+   gap: 20px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 20px;
+   float: inline-start;
+}
+/* <!-- Fotos laterais -->*/
+.foto-1 {
+   padding-left: 15px;
+   justify-content: space-between;
+   display: flex;
+   padding-bottom: 8px;
+}
+.foto-1 > img {
+   /*border: solid rgb(255, 0, 183);*/
+   height: 70px;
+   width: 70px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   margin-left: 1px;
+   display: flex;
+}
+.foto-2 {
+   padding-left: 15px;
+   justify-content: space-between;
+   padding-bottom: 8px;
+   display: flex;
+}
+.foto-2 > img {
+   /*border: solid rgb(255, 0, 183);*/
+   height: 70px;
+   width: 70px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   margin-left: 1px;
+   display: flex;
+}
+.foto-3 {
+   padding-left: 15px;
+   justify-content: space-between;
+   padding-bottom: 8px;
+   display: flex;
+}
+.foto-3 > img {
+   /*border: solid rgb(255, 0, 183);*/
+   height: 70px;
+   width: 70px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   margin-left: 1px;
+   display: flex;
+}
+.foto-4 {
+   padding-left: 15px;
+   justify-content: space-between;
+   padding-bottom: 8px;
+   display: flex;
+}
+.foto-4 > img {
+   /*border: solid rgb(255, 0, 183);*/
+   height: 70px;
+   width: 70px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   margin-left: 1px;
+   display: flex;
+}
+.foto-5 {
+   padding-left: 15px;
+   justify-content: space-between;
+   padding-bottom: 8px;
+   display: flex;
+}
+.foto-5 > img {
+   /*border: solid rgb(255, 0, 183);*/
+   height: 70px;
+   width: 70px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   margin-left: 1px;
+   display: flex;
+}
+/*<!-- Características do animal-->*/
+
+.caracteristicas-animal {
+   /*border: solid #646464;*/
+   justify-content: left;
+   width: 630px;
+   padding: 20px;
+   margin-left: 60px;
+   display: flex;
+   flex-flow: row wrap;
+}
+
+h2 {
+   /*border: solid#db2020;*/
+   color: #ff9f32;
+   font-family: dosis-bold;
+   font-size: 30px;
+   text-align: left;
+   height: 50px;
+   width: 100%;
+}
+.Tipo-animal {
+   /*border: solid #646464;*/
+   margin-right: 40px;
+}
+
+#cao {
+   padding-left: 20px;
+}
+
+#gato {
+   padding-left: 5px;
+}
+
+h3 {
+   color: #1a1a1a;
+   font-family: dosis-bold;
+   font-size: 22px;
+   padding-bottom: 8px;
+   display: flex;
+}
+
+.Sexo {
+   /*border: solid #ff9f32;*/
+   margin-right: 50px;
+}
+
+#macho {
+   padding-left: 20px;
+}
+#femea {
+   padding-left: 5px;
+}
+
+.Porte {
+   /*border: solid #ff9f32;*/
+   margin-right: 20px;
+}
+#pequeno {
+   padding-left: 20px;
+}
+#medio {
+   padding-left: 5px;
+}
+#grande {
+   padding-left: 5px;
+}
+
+.Cor {
+   /*border: solid #ff9f32;*/
+   margin-right: 40px;
+}
+
+#preto {
+   padding-left: 20px;
+}
+#branco {
+   padding-left: 5px;
+}
+#camarelo-claro {
+   padding-left: 5px;
+}
+#camarelo-escuro {
+   padding-left: 5px;
+}
+#preto-branco {
+   padding-left: 5px;
+}
+#branco-caramelo {
+   padding-left: 5px;
+}
+
+.Idade-do-animal {
+   /*border: solid #ff9f32;*/
+   margin-right: 40px;
+}
+
+.Idade-do-animal > input {
+   /*border: solid #ff9f32;*/
+   background-color: white;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   gap: 10px;
+   width: 100px;
+   height: 30px;
+   margin-left: 20px;
+}
+/* -- Configuração do bloco principal -- */
+.footer {
+   /*border: solid rgb(3, 60, 26);*/
+   display: flex;
+   justify-content: center;
+   padding: 20px;
+}
+/* -- Caixa de Descrição do animal -- */
+
+label {
+   /*border: solid rgb(136, 97, 97);*/
+   display: flex;
+   text-decoration: none;
+   font-family: dosis-bold;
+   font-size: 22px;
+   margin-left: 100px;
+}
+#texto-descrição {
+   /*border: solid red;*/
+   display: flex;
+   width: 700px;
+   height: 200px;
+   background-color: white;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 20px;
+   gap: 20px;
+   margin-left: 100px;
+   font-size: 18px;
+}
+/* -- Botão Salvar  -- */
+.botao-salvar {
+   /*border: solid rgb(0, 255, 102);*/
+   display: flex;
+   height: 50px;
+   width: 150px;
+   gap: 20px;
+   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+   border-radius: 20px;
+   background-color: green;
+   align-items: center;
+   justify-content: center;
+}
+h5 {
+   color: white;
+   font-family: dosis-bold;
+   font-size: 22px;
+   text-decoration: none;
+   text-align: center;
+}
+
+/* -- RESPONSIVIDADE 600PX -- */
+/* @media screen and (max-width: 600px) {
+   .header,
+   .main,
+   .footer {
+      flex-direction: column;
+      display: flex;
+   }
+   .main {
+      padding-left: 20px;
+      width: fit-content;
+   }
+
+   .logo {
+      margin-left: 40px;
+   }
+   h1 {
+      text-align: center;
+      display: flex;
+   }
+   .menu-desktop {
+      width: fit-content;
+   }
+   .menu-superior {
+      width: fit-content;
+   }
+
+   .menu-superior > a {
+      display: none;
+   }
+   .botao-laranja {
+      flex-direction: column;
+      display: flex;
+   }
+   .botao-laranja > h1 {
+      text-align: center;
+   }
+   .foto-principal {
+      display: flex;
+      margin-bottom: 20px;
+      margin-left: 30px;
+   }
+   .fotos-laterais {
+      display: flex;
+      margin-left: 0px;
+   }
+
+   .caracteristicas-animal {
+      display: flex;
+      flex-direction: column;
+      margin: 3px;
+   }
+   .Tipo-animal {
+      float: left;
+   }
+   .Sexo {
+      float: left;
+   }
+   .Porte {
+      float: left;
+   }
+   .Cor {
+      float: left;
+   }
+   .Idade-do-animal {
+      float: left;
+      margin-top: 20px;
+   }
+   .botao-salvar {
+      float: left;
+      margin-left: 100px;
+   }
+   #botao-salvar {
+      float: left;
+   }
+
+   label {
+      float: left;
+      margin-left: 0px;
+   }
+
+   #texto-descrição {
+      float: left;
+      margin-left: 0px;
+   }
+} */
